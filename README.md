@@ -1,4 +1,4 @@
-# POO-3E - Taller: Clases y Objetos 🐍
+# POO-3E - Taller: Clases y Objetos 
 
 Taller práctico de **Programación Orientada a Objetos (POO)** en Python. Cada ejercicio implementa una clase con atributos y métodos que modelan objetos del mundo real.
 
