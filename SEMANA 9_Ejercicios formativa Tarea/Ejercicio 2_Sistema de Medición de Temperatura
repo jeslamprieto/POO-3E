@@ -1,0 +1,42 @@
+from abc import ABC, abstractmethod
+
+class SensorTemperatura(ABC):
+    @abstractmethod
+    def obtener_temperatura(self):
+        pass
+
+
+## Clase SensorCelsius
+class SensorCelsius(SensorTemperatura):
+    def __init__(self, temperatura):
+        self.temperatura = temperatura
+
+    def obtener_temperatura(self):
+        return f"{self.temperatura} C"
+
+    def convertir_a_fahrenheit(self):
+        fahrenheit = (self.temperatura * 9/5) + 32
+        return f"{fahrenheit} F"
+
+
+## Clase SensorFahrenheit
+class SensorFahrenheit(SensorTemperatura):
+    def __init__(self, temperatura):
+        self.temperatura = temperatura
+
+    def obtener_temperatura(self):
+        return f"{self.temperatura} F"
+
+    def convertir_a_celsius(self):
+        celsius = (self.temperatura - 32) * 5/9
+        return f"{celsius:.2f} C"
+
+
+sensor1 = SensorCelsius(100)
+sensor2 = SensorFahrenheit(212)
+
+print(f"Temperatura en Celsius: {sensor1.obtener_temperatura()}")
+print(f"Convertida a Fahrenheit: {sensor1.convertir_a_fahrenheit()}")
+print("---")
+print(f"Temperatura en Fahrenheit: {sensor2.obtener_temperatura()}")
+print(f"Convertida a Celsius: {sensor2.convertir_a_celsius()}")
